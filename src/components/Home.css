@@ -1,0 +1,47 @@
+ body{
+    padding: 0;
+    margin: 0;
+    background-color: floralwhite;
+}
+
+
+.chart{
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    left: 50%;
+    top: 54%;
+    transform: translate(-50%, -60%); 
+    background-image: url('../../assests/birthdayimg.jpg');
+    background-size: 100% 100%;
+    animation: slider 9s infinite linear;
+}
+
+@keyframes slider{
+	0%{
+background-image: url('../../assests/bmi_img.jpg');
+	}
+	35%{
+background-image: url('../../assests/birthdayimg.jpg');
+	}
+	75%{
+background-image: url('../../assests/bmi_img.jpg');
+	}
+}
+
+.newtext .btn{
+    display: inline-flex;
+    color: white;
+    margin-top: 35%;
+    font-size: 40px;
+    padding-left: 30px;
+}
+.newtext{
+    margin-left: 30%;
+}
+.newtext .btn .bttext{
+    width: 200px;
+    padding: 20px 0px;
+    font-size: 20px;
+}
