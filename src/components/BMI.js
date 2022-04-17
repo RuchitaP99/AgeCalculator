@@ -1,4 +1,5 @@
 import './BMI.css';
+import { useHistory } from "react-router-dom";
 
 function BMI(){
     function bmi(){
@@ -9,6 +10,7 @@ function BMI(){
         document.getElementById('bmi').innerHTML = "Your BMI is " + total;
 
     }
+    let home = useHistory();
     return(
         <div className='const'>
             <h2>BMI Calculator</h2>
@@ -17,7 +19,9 @@ function BMI(){
             <p className='text'>Weight</p>
             <input type='text' id='weight'/>
             <p id='bmi'/>
-            <input className='btn' type="button" name="Calculate" value="Calculate" onClick={bmi}></input>
+            <input className='btn' type="button" name="Submit" value="Submit" onClick={bmi}></input>
+            <input className="btn" type="button" name="close" value="Close" onClick={() => { home.push("/home")}}></input>
+
             <p id='info'>Please enter height[cm] and weight [kg]</p>
         </div>
     )
