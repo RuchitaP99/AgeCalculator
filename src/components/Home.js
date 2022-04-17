@@ -1,22 +1,24 @@
 import './Home.css';
+import { useHistory } from "react-router-dom";
 
 function Home() {
+
+    let history = useHistory();
 
     return (
        
             <div className='chart'>
+                
                 <div class="newtext">
                     <div className='btn'>
-                    <button type="submit" class="bttext" >GO TO AGE CAL</button>
+                    <button type="submit" class="bttext" onClick={() => { history.push("/age")}}>AGE CALCULATOR</button>
                     </div>
                     <div className='btn'>
-                    <button type="submit" class="bttext" >GO TO BMI</button>
+                    <button type="submit" class="bttext" onClick={() => { history.push("/bmi")}}>BMI CALCULATOR</button>
                     </div>
                     </div>
 
-            </div>
-
-      
+                </div>
     )
 }
 export default Home
