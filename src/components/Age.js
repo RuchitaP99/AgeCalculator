@@ -1,4 +1,5 @@
 import './Age.css';
+import { useHistory } from "react-router-dom";
 
 function Age() {
   function age(){
@@ -19,7 +20,7 @@ function Age() {
      d2 = d2 + month[m2 - 1]; 
      m2 = m2 - 1;
     }
-    else if(m1>m2){
+    if(m1>m2){
       m2 = m2 + 12;
       console.log(m2);
       y2 = y2 - 1;
@@ -31,6 +32,9 @@ function Age() {
     document.getElementById('age').innerHTML = ` "Your age is " ${y} " Years " ${m} " Months " ${d} " Days"🎂`;
  
   }
+
+  let home = useHistory();
+
   return (
    
     <div className="container">
@@ -57,9 +61,13 @@ function Age() {
             <input type="button" name="submit" value="Submit" onClick={age}></input>
           </div>
         </div>
+        <div className="base">
+          <div className="enter">
+            <input type="button" name="close" value="Close" onClick={() => { home.push("/home")}}></input>
+          </div>
+        </div>
         <div id="age"></div>
       </form>
-    
     </div> 
   );
 }
